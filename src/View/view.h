@@ -9,6 +9,7 @@
 #include <QTabWidget>
 #include <QObject>
 #include <QMainWindow>
+#include <string>
 
 
 class View : public QMainWindow
@@ -75,9 +76,22 @@ QLineEdit *signupPasswordLineEdit;
 QPushButton *signupSubmitButton;
 QVBoxLayout *signupLayout;
 
+// Page de Distributor
+QWidget distributorPage;
+QLabel *artworkLabel;
+QLabel *netflixLabel;
+QLabel *primeLabel;
+QLabel *HBOLabel;
+QPushButton *addToPlaylistButton;
+QPushButton *noticeButton;
+QPushButton *backButton;
+QVBoxLayout* distributorLayout;
+QHBoxLayout* backLayout;
+
 void createLoginPage();
 void createHomePage();
 void createSignupPage();
+void createDistributorPage();
 };
 
 #endif // VIEW_H

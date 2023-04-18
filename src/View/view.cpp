@@ -33,6 +33,7 @@ void View::createLoginPage()
 
     signupPage.hide();
     homePage.hide();
+    distributorPage.hide();
     loginPage.show();
 
     // Connexion du bouton Sign Up
@@ -152,8 +153,19 @@ void View::createHomePage() {
     // Connexion du bouton LogOut à Login
     QObject::connect(userButtonLogout, &QPushButton::clicked, this, &View::createLoginPage);
 
+    // Connexion des boutons films/séries à distributor
+    QObject::connect(movie1Button, &QPushButton::clicked, this, &View::createDistributorPage);
+    QObject::connect(movie2Button, &QPushButton::clicked, this, &View::createDistributorPage);
+    QObject::connect(movie3Button, &QPushButton::clicked, this, &View::createDistributorPage);
+    QObject::connect(movie4Button, &QPushButton::clicked, this, &View::createDistributorPage);
+    QObject::connect(series1Button, &QPushButton::clicked, this, &View::createDistributorPage);
+    QObject::connect(series2Button, &QPushButton::clicked, this, &View::createDistributorPage);
+    QObject::connect(series3Button, &QPushButton::clicked, this, &View::createDistributorPage);
+    QObject::connect(series4Button, &QPushButton::clicked, this, &View::createDistributorPage);
+
     signupPage.hide();
     loginPage.hide();
+    distributorPage.hide();
     homePage.show();
 }
 
@@ -178,9 +190,62 @@ void View::createSignupPage() {
 
     loginPage.hide();
     homePage.hide();
+    distributorPage.hide();
     signupPage.show();
 
     // Connexion du bouton Submit du formulaire de sign up
     QObject::connect(signupSubmitButton, &QPushButton::clicked, this, &View::createLoginPage);
+}
+
+void View::createDistributorPage() {
+    // Création de la nouvelle page avec le titre correspondant au texte du bouton cliqué
+    distributorPage.setWindowTitle("name");
+    distributorPage.setFixedHeight(400);
+    distributorPage.setFixedWidth(600);
+
+    // Création du layout et contenu pour la page distributor
+    distributorLayout = new QVBoxLayout();
+    artworkLabel = new QLabel("ARTWORK");
+    netflixLabel = new QLabel("Available on this distributor : Netflix");
+    primeLabel = new QLabel("Available on this distributor : Amazon Prime");
+    HBOLabel = new QLabel("Available on this distributor : HBO");
+    addToPlaylistButton = new QPushButton("Add this artwork to a playlist");
+    noticeButton = new QPushButton("Leave a notice");
+    backButton = new QPushButton("Go back home");
+    artworkLabel->setFixedSize(200, 30);
+    netflixLabel->setFixedSize(200, 30);
+    primeLabel->setFixedSize(200, 30);
+    HBOLabel->setFixedSize(200, 30);
+
+    distributorLayout->addWidget(artworkLabel);
+    distributorLayout->addWidget(netflixLabel);
+    distributorLayout->addWidget(primeLabel);
+    distributorLayout->addWidget(HBOLabel);
+    distributorLayout->addWidget(addToPlaylistButton);
+    distributorLayout->addWidget(noticeButton);
+    distributorLayout->setAlignment(Qt::AlignHCenter);
+
+    // Création du layout pour les boutons en bas
+    backLayout = new QHBoxLayout;
+
+    // Ajout des boutons dans le layout en bas
+    backLayout->addWidget(backButton);
+
+    // Spécification d'une taille fixe pour les boutons
+    backButton->setFixedSize(150, 30);
+
+    // Ajout du layout des boutons au layout principal
+    distributorLayout->addLayout(backLayout);
+
+    distributorPage.setLayout(distributorLayout);
+
+    // Affichage de la nouvelle page
+    loginPage.hide();
+    homePage.hide();
+    signupPage.hide();
+    distributorPage.show();
+
+    // Connexion du bouton Go Home à l'accueil
+    QObject::connect(backButton, &QPushButton::clicked, this, &View::createHomePage);
 
 }
