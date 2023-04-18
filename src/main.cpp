@@ -1,4 +1,4 @@
-#include "src/View/connection.h"
+#include "src/View/view.h"
 #include <QApplication>
 #include <QWidget>
 #include <QLineEdit>
@@ -10,8 +10,11 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    connection w;
-    w.show();
+    View v;
+    v.show();
+
+
+
     /*QApplication app(argc, argv);
 
     // Page de login

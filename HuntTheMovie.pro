@@ -21,7 +21,7 @@ SOURCES += \
     src/Model/noticebuilder.cpp \
     src/Model/series.cpp \
     src/Model/user.cpp \
-    src/View/connection.cpp \
+    src/View/view.cpp \
     src/main.cpp \
 
 HEADERS += \
@@ -37,7 +37,7 @@ HEADERS += \
     src/Model/noticebuilder.h \
     src/Model/series.h \
     src/Model/user.h \
-    src/View/connection.h \
+    src/View/view.h
 
 FORMS += \
     mainwindow.ui
