@@ -1,3 +1,4 @@
+#include "src/View/connection.h"
 #include <QApplication>
 #include <QWidget>
 #include <QLineEdit>
@@ -9,6 +10,9 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    connection w;
+    w.show();
+    /*QApplication app(argc, argv);
 
     // Page de login
     QWidget loginPage;
@@ -104,7 +108,7 @@ int main(int argc, char *argv[])
         homePage.show();
     });
 
-    loginPage.show();
+    loginPage.show();*/
 
     return app.exec();
 }

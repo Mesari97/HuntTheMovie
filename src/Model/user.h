@@ -28,7 +28,7 @@ public:
     void setNoticeList(std::list<Notice> noticeList);
 
     //Country
-    Country getCountry();
+    //Country getCountry();
 
     //NoticeList methodes
     int addNotice(Notice notice);

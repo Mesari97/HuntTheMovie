@@ -55,9 +55,9 @@ void User::setNoticeList(std::list<Notice> noticeList)
 }
 
 //Country
-Country User::getCountry() {
+/*Country User::getCountry() {
     //à implémenter, jsp encore comment on va récupérer le pays de l'user
-}
+}*/
 
 //NoticeList methodes
 int User::addNotice(Notice notice)

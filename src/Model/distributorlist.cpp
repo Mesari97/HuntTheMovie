@@ -1,10 +1,10 @@
 #include "distributorlist.h"
 #include <list>
 
-Country DistributorList::getCountry()
+/*Country DistributorList::getCountry()
 {
     //mm fonction que user
-}
+}*/
 
 std::list<Distributor> DistributorList::getDistributorList()
 {
