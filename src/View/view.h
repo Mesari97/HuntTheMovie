@@ -55,10 +55,6 @@ QVBoxLayout *signupLayout;
 void createLoginPage();
 void createHomePage();
 void createSignupPage();
-/*private slots:
-void onSignupButtonClicked();
-void onSignupSubmitButtonClicked();
-void onLoginButtonClicked();*/
 };
 
 #endif // VIEW_H
