@@ -37,9 +37,28 @@ QWidget *moviesTab;
 QWidget *seriesTab;
 QWidget *playlistTab;
 QWidget *userTab;
-QLabel *tab1Label;
-QPushButton *tab2Button;
-QLabel *tab3Label;
+
+//Onglet film
+QPushButton *movie1Button;
+QPushButton *movie2Button;
+QPushButton *movie3Button;
+QPushButton *movie4Button;
+QVBoxLayout *moviesTabLayout;
+
+//Onglet série
+QPushButton *series1Button;
+QPushButton *series2Button;
+QPushButton *series3Button;
+QPushButton *series4Button;
+QVBoxLayout *seriesTabLayout;
+
+//Onglet playlist
+QPushButton *favPlaylistButton;
+QPushButton *actionPlaylistButton;
+QPushButton *lovePlaylistButton;
+QVBoxLayout *playlistTabLayout;
+
+//Onglet user
 QPushButton *userButtonLogout;
 QPushButton *changeUsernameButton;
 QPushButton *changePasswordButton;

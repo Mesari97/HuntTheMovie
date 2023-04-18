@@ -58,20 +58,70 @@ void View::createHomePage() {
     userTab = new QWidget();
 
     // Création du contenu de chaque onglet
-    tab1Label = new QLabel("Contenu de l'onglet 1", moviesTab);
-    tab2Button = new QPushButton("Bouton de l'onglet 2", seriesTab);
-    tab3Label = new QLabel("Contenu de l'onglet 3", playlistTab);
+    //moviesTab
+    movie1Button = new QPushButton("Interstellar", moviesTab);
+    movie2Button = new QPushButton("Forrest Gump", moviesTab);
+    movie3Button = new QPushButton("OSS 117", moviesTab);
+    movie4Button = new QPushButton("Avatar", moviesTab);
+    movie1Button->setFixedSize(200, 30);
+    movie2Button->setFixedSize(200, 30);
+    movie3Button->setFixedSize(200, 30);
+    movie4Button->setFixedSize(200, 30);
+
+    //seriesTab
+    series1Button = new QPushButton("Breaking Bad", seriesTab);
+    series2Button = new QPushButton("Game of Thrones", seriesTab);
+    series3Button = new QPushButton("Vikings", seriesTab);
+    series4Button = new QPushButton("Peaky Blinders", seriesTab);
+    series1Button->setFixedSize(200, 30);
+    series2Button->setFixedSize(200, 30);
+    series3Button->setFixedSize(200, 30);
+    series4Button->setFixedSize(200, 30);
+
+    //playlistTab
+    favPlaylistButton = new QPushButton("Favorites", playlistTab);
+    actionPlaylistButton = new QPushButton("Action", playlistTab);
+    lovePlaylistButton = new QPushButton("Love", playlistTab);
+    favPlaylistButton->setFixedSize(200, 30);
+    actionPlaylistButton->setFixedSize(200, 30);
+    lovePlaylistButton->setFixedSize(200, 30);
+
+    //userTab
     userButtonLogout = new QPushButton("Log Out", userTab);
     changeUsernameButton = new QPushButton("Change Username", userTab);
     changePasswordButton = new QPushButton("Change Password", userTab);
     changeUsernameButton->setFixedSize(200, 30);
     changePasswordButton->setFixedSize(200, 30);
 
+    // Création du layout pour l'onglet Movies
+    moviesTabLayout = new QVBoxLayout(moviesTab);
+    moviesTabLayout->addWidget(movie1Button);
+    moviesTabLayout->addWidget(movie2Button);
+    moviesTabLayout->addWidget(movie3Button);
+    moviesTabLayout->addWidget(movie4Button);
+    moviesTabLayout->setAlignment(Qt::AlignHCenter);
+
+    // Création du layout pour l'onglet Series
+    seriesTabLayout = new QVBoxLayout(seriesTab);
+    seriesTabLayout->addWidget(series1Button);
+    seriesTabLayout->addWidget(series2Button);
+    seriesTabLayout->addWidget(series3Button);
+    seriesTabLayout->addWidget(series4Button);
+    seriesTabLayout->setAlignment(Qt::AlignHCenter);
+
+    // Création du layout pour l'onglet Series
+    playlistTabLayout = new QVBoxLayout(playlistTab);
+    playlistTabLayout->addWidget(favPlaylistButton);
+    playlistTabLayout->addWidget(actionPlaylistButton);
+    playlistTabLayout->addWidget(lovePlaylistButton);
+    playlistTabLayout->setAlignment(Qt::AlignHCenter);
+
     // Création du layout pour l'onglet User
     userTabLayout = new QVBoxLayout(userTab);
     userTabLayout->addWidget(changeUsernameButton);
     userTabLayout->addWidget(changePasswordButton);
     userTabLayout->setAlignment(Qt::AlignHCenter);
+
 
     // Ajout des onglets au widget QTabWidget
     tabWidget->addTab(moviesTab, "Movies");
@@ -85,11 +135,10 @@ void View::createHomePage() {
     // Ajout du widget QTabWidget au layout
     homePageLayout->addWidget(tabWidget);
 
-
-    // Création du layout pour les boutons
+    // Création du layout pour les boutons en bas
     buttonsLayout = new QHBoxLayout;
 
-    // Ajout des boutons dans le layout
+    // Ajout des boutons dans le layout en bas
     buttonsLayout->addWidget(userButtonLogout);
 
     // Spécification d'une taille fixe pour les boutons
