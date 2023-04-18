@@ -61,7 +61,17 @@ void View::createHomePage() {
     tab1Label = new QLabel("Contenu de l'onglet 1", moviesTab);
     tab2Button = new QPushButton("Bouton de l'onglet 2", seriesTab);
     tab3Label = new QLabel("Contenu de l'onglet 3", playlistTab);
-    tab4Button = new QPushButton("Bouton de l'onglet 4", userTab);
+    userButtonLogout = new QPushButton("Log Out", userTab);
+    changeUsernameButton = new QPushButton("Change Username", userTab);
+    changePasswordButton = new QPushButton("Change Password", userTab);
+    changeUsernameButton->setFixedSize(200, 30);
+    changePasswordButton->setFixedSize(200, 30);
+
+    // Création du layout pour l'onglet User
+    userTabLayout = new QVBoxLayout(userTab);
+    userTabLayout->addWidget(changeUsernameButton);
+    userTabLayout->addWidget(changePasswordButton);
+    userTabLayout->setAlignment(Qt::AlignHCenter);
 
     // Ajout des onglets au widget QTabWidget
     tabWidget->addTab(moviesTab, "Movies");
@@ -71,9 +81,27 @@ void View::createHomePage() {
 
     // Création du layout pour la page d'accueil
     homePageLayout = new QVBoxLayout;
+
     // Ajout du widget QTabWidget au layout
     homePageLayout->addWidget(tabWidget);
+
+
+    // Création du layout pour les boutons
+    buttonsLayout = new QHBoxLayout;
+
+    // Ajout des boutons dans le layout
+    buttonsLayout->addWidget(userButtonLogout);
+
+    // Spécification d'une taille fixe pour les boutons
+    userButtonLogout->setFixedSize(150, 30);
+
+    // Ajout du layout des boutons au layout principal
+    homePageLayout->addLayout(buttonsLayout);
+
     homePage.setLayout(homePageLayout);
+
+    // Connexion du bouton LogOut à Login
+    QObject::connect(userButtonLogout, &QPushButton::clicked, this, &View::createLoginPage);
 
     signupPage.hide();
     loginPage.hide();

@@ -40,8 +40,12 @@ QWidget *userTab;
 QLabel *tab1Label;
 QPushButton *tab2Button;
 QLabel *tab3Label;
-QPushButton *tab4Button;
+QPushButton *userButtonLogout;
+QPushButton *changeUsernameButton;
+QPushButton *changePasswordButton;
 QVBoxLayout *homePageLayout;
+QVBoxLayout *userTabLayout;
+QHBoxLayout *buttonsLayout;
 
 // Page de sign up
 QWidget signupPage;
