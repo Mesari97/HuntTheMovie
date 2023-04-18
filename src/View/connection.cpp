@@ -10,7 +10,7 @@
 #include <QTabWidget>
 
 connection::connection(QWidget *parent)
-    : QMainWindow(parent)
+    : QMainWindow(parent),
     ui(new Ui::connection)
 {
     ui->setupUi(this);
@@ -38,3 +38,7 @@ connection::connection(QWidget *parent)
     loginPage.setLayout(loginLayout);
 }
 
+connection::~connection()
+{
+    delete ui;
+}

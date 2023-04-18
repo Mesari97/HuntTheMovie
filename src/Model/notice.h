@@ -21,3 +21,4 @@ private :
     std::string comment_;
     Artwork artwork_;
 };
+

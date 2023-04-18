@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\Model"
+    "\\src\\Model",
+    "\\src\\View"
   ],
-  "SelectedNode": "\\mainwindow.ui",
+  "SelectedNode": "\\src\\Model\\buildernote.h",
   "PreviewInSolutionExplorer": false
 }

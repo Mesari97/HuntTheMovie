@@ -10,11 +10,15 @@ CONFIG += c++11
 
 SOURCES += \
     src/Model/artwork.cpp \
+    src/Model/buildercomment.cpp \
+    src/Model/buildernote.cpp \
     src/Model/country.cpp \
+    src/Model/directornotice.cpp \
     src/Model/distributor.cpp \
     src/Model/distributorlist.cpp \
     src/Model/movie.cpp \
     src/Model/notice.cpp \
+    src/Model/noticebuilder.cpp \
     src/Model/series.cpp \
     src/Model/user.cpp \
     src/View/connection.cpp \
@@ -22,11 +26,15 @@ SOURCES += \
 
 HEADERS += \
     src/Model/artwork.h \
+    src/Model/buildercomment.h \
+    src/Model/buildernote.h \
     src/Model/country.h \
+    src/Model/directornotice.h \
     src/Model/distributor.h \
     src/Model/distributorlist.h \
     src/Model/movie.h \
     src/Model/notice.h \
+    src/Model/noticebuilder.h \
     src/Model/series.h \
     src/Model/user.h \
     src/View/connection.h \
